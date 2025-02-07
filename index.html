@@ -91,7 +91,9 @@
 
             .page img {
                 max-width: 100%;
+                height: auto; /* Сохраняем пропорции изображения */
                 margin-bottom: 20px;
+                border-radius: 10px; /* Скругление углов */
             }
 
             .page .text {
@@ -100,6 +102,21 @@
 
             .page:nth-child(even) {
                 flex-direction: column;
+            }
+
+            /* Выравнивание иконки Spotify */
+            .song-link {
+                align-items: flex-start; /* Выравниваем иконку и текст по левому краю */
+                margin-top: 15px; /* Отступ сверху */
+            }
+
+            .spotify-icon {
+                margin-right: 10px; /* Отступ между иконкой и текстом */
+            }
+
+            /* Убираем подчёркивание у всех ссылок */
+            .song-link {
+                text-decoration: none !important;
             }
         }
     </style>
@@ -154,7 +171,7 @@
                 но тогда нам нравилось абсолютно все, даже поход в большой магазин. Помню как ты дернула за веревку в АШАНе, как это было смешно, тогда мы начали с тобой панковать и веселиться, любая наша прогулка была приключением!</p>
                 <p>За эти моменты счастья я тебя безумно люблю <3 </p>
                 <!-- Ссылка на песню -->
-                <a href="https://open.spotify.com/track/7eDxCu28bbH2zcFoR3iAa4?si=8ec51f09abb841f3">
+                <a href="https://open.spotify.com/track/7eDxCu28bbH2zcFoR3iAa4?si=8ec51f09abb841f3" target="_blank" class="song-link">
                     <img src="icon2.jpg" alt="Слушать на Spotify" class="spotify-icon">
                     <span>Увула - ты и твоя тень</span>
                 </a>
