@@ -10,6 +10,11 @@ document.addEventListener("DOMContentLoaded", function() {
     const pages = document.querySelectorAll(".page");
     const paragraphs = document.querySelectorAll(".text p");
 
+    const observerOptions = {
+        threshold: 0.1, // Активируем анимацию, когда 10% блока видно
+        rootMargin: "0px" // Отступ от области видимости
+    };
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             console.log(entry); // Проверка, что блоки появляются в области видимости
@@ -17,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 entry.target.classList.add("visible");
             }
         });
-    }, { threshold: 0.1 }); // Активируем анимацию, когда 10% блока видно
+    }, observerOptions);
 
     pages.forEach(page => observer.observe(page));
     paragraphs.forEach(p => observer.observe(p));
