@@ -4,8 +4,105 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Always With You</title>
-    <link rel="stylesheet" href="alwayswithu.css"> <!-- Подключаем CSS -->
     <link rel="icon" href="icon.ico" type="image/x-icon"> <!-- Иконка сайта -->
+    <style>
+        /* Основные стили для страницы */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #976CAF; /* Фиолетовый фон */
+            color: #fff; /* Белый текст для контраста */
+        }
+
+        /* Контейнер для всего альбома */
+        .album {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* Стили для каждой страницы альбома */
+        .page {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 80%;
+            max-width: 1000px;
+            margin-bottom: 40px;
+            background-color: rgba(255, 255, 255, 0.9); /* Белый с прозрачностью */
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Мягкая тень */
+            border-radius: 15px; /* Скругление углов */
+            backdrop-filter: blur(5px); /* Размытие фона */
+        }
+
+        /* Стили для изображений */
+        .page img {
+            max-width: 45%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Стили для текста */
+        .page .text {
+            max-width: 45%;
+            font-size: 18px;
+            line-height: 1.6; /* Расстояние между строками */
+            padding: 10px;
+            color: #333; /* Темный текст для контраста на белом фоне */
+        }
+
+        /* Стили для ссылки на песню */
+        .song-link {
+            display: flex;
+            align-items: center; /* Выравниваем иконку и текст по центру */
+            text-decoration: none; /* Убираем подчёркивание */
+            color: #1DB954; /* Цвет текста как в Spotify */
+            margin-top: 10px; /* Отступ сверху */
+            font-size: 16px;
+        }
+
+        /* Стили для иконки Spotify */
+        .spotify-icon {
+            width: 20px; /* Размер иконки */
+            height: 20px;
+            margin-right: 8px; /* Отступ между иконкой и текстом */
+        }
+
+        /* Эффект при наведении на ссылку */
+        .song-link:hover {
+            opacity: 0.8; /* Легкое затемнение */
+        }
+
+        /* Чередование расположения картинки и текста */
+        .page:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        /* Адаптивность для мобильных устройств */
+        @media (max-width: 768px) {
+            .page {
+                flex-direction: column;
+                width: 90%;
+            }
+
+            .page img {
+                max-width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .page .text {
+                max-width: 100%;
+            }
+
+            .page:nth-child(even) {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="album">
@@ -13,9 +110,12 @@
         <div class="page">
             <img src="image1.jpg" alt="Наше первое фото">
             <div class="text">
-                <p>Привет! Сейчас ты далеко-далеко и для тебя я подготовил такой небольшой, но думаю очень памятный подарок, 
-этот сайт будет с нами всю нашу жизнь, чтобы не случилось, а может даже и дольше! Это первая фотография тебя, которую я сделал во время нашей одной из первых крутейших прогулок. Её я запомню на всю жизнь!</p>
-                <p>P.S. Ты настолько сильно поразила меня тем альбомом, что я решил увековечить нашу любовь и воспоминания навсегда <3 </p>
+                <p>Это наше первое фото вместе. Помнишь, как мы тогда смеялись?</p>
+                <!-- Ссылка на песню -->
+                <a href="https://open.spotify.com/track/4uLU6hMCjMI75M1A2tKUQC" target="_blank" class="song-link">
+                    <img src="icon2.ico" alt="Слушать на Spotify" class="spotify-icon">
+                    <span>Ed Sheeran - Perfect</span>
+                </a>
             </div>
         </div>
         <!-- Вторая страница -->
@@ -23,6 +123,11 @@
             <img src="image2.jpg" alt="Наш первый ужин">
             <div class="text">
                 <p>А это наш первый совместный ужин. Ты была так прекрасна!</p>
+                <!-- Ссылка на песню -->
+                <a href="https://open.spotify.com/track/6dGnYIeXmHdcikdzNNDMm2" target="_blank" class="song-link">
+                    <img src="icon2.ico" alt="Слушать на Spotify" class="spotify-icon">
+                    <span>John Legend - All of Me</span>
+                </a>
             </div>
         </div>
         <!-- Третья страница -->
@@ -30,6 +135,11 @@
             <img src="image3.jpg" alt="Закат">
             <div class="text">
                 <p>И вот этот момент, когда мы вместе смотрели закат. Это было волшебно!</p>
+                <!-- Ссылка на песню -->
+                <a href="https://open.spotify.com/track/3JLVT2iMfTz4vVh0Z1Zz9X" target="_blank" class="song-link">
+                    <img src="icon2.ico" alt="Слушать на Spotify" class="spotify-icon">
+                    <span>Coldplay - Yellow</span>
+                </a>
             </div>
         </div>
         <!-- Добавь больше страниц по своему усмотрению -->
