@@ -42,9 +42,31 @@ body {
 .page .text {
     max-width: 45%;
     font-size: 18px;
-    line-height: 1.6;
+    line-height: 1.6; /* Расстояние между строками */
     padding: 10px;
     color: #333; /* Темный текст для контраста на белом фоне */
+}
+
+/* Стили для ссылки на песню */
+.song-link {
+    display: flex;
+    align-items: center; /* Выравниваем иконку и текст по центру */
+    text-decoration: none; /* Убираем подчёркивание */
+    color: #1DB954; /* Цвет текста как в Spotify */
+    margin-top: 10px; /* Отступ сверху */
+    font-size: 16px;
+}
+
+/* Стили для иконки Spotify */
+.spotify-icon {
+    width: 20px; /* Размер иконки */
+    height: 20px;
+    margin-right: 8px; /* Отступ между иконкой и текстом */
+}
+
+/* Эффект при наведении на ссылку */
+.song-link:hover {
+    opacity: 0.8; /* Легкое затемнение */
 }
 
 /* Чередование расположения картинки и текста */
@@ -61,7 +83,9 @@ body {
 
     .page img {
         max-width: 100%;
+        height: auto; /* Сохраняем пропорции изображения */
         margin-bottom: 20px;
+        border-radius: 10px; /* Скругление углов */
     }
 
     .page .text {
@@ -70,5 +94,15 @@ body {
 
     .page:nth-child(even) {
         flex-direction: column;
+    }
+
+    /* Выравнивание иконки Spotify */
+    .song-link {
+        align-items: flex-start; /* Выравниваем иконку и текст по левому краю */
+        margin-top: 15px; /* Отступ сверху */
+    }
+
+    .spotify-icon {
+        margin-right: 10px; /* Отступ между иконкой и текстом */
     }
 }
