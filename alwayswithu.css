@@ -1,0 +1,73 @@
+/* Основные стили для страницы */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #976CAF; /* Фиолетовый фон */
+    color: #fff; /* Белый текст для контраста */
+}
+
+/* Контейнер для всего альбома */
+.album {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Стили для каждой страницы альбома */
+.page {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    max-width: 1000px;
+    margin-bottom: 40px;
+    background-color: #fff; /* Белый фон для страниц */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень для страниц */
+    border-radius: 10px;
+}
+
+/* Стили для изображений */
+.page img {
+    max-width: 45%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Стили для текста */
+.page .text {
+    max-width: 45%;
+    font-size: 18px;
+    line-height: 1.6;
+    padding: 10px;
+    color: #333; /* Темный текст для контраста на белом фоне */
+}
+
+/* Чередование расположения картинки и текста */
+.page:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .page {
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .page img {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .page .text {
+        max-width: 100%;
+    }
+
+    .page:nth-child(even) {
+        flex-direction: column;
+    }
+}
