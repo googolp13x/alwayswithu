@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
     document.body.style.opacity = "1";
 
     // Анимация появления блоков
-    const sections = document.querySelectorAll(".page");
+    const pages = document.querySelectorAll(".page");
 
     const observerOptions = {
         threshold: 0.1, // Активируем анимацию, когда 10% блока видно
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }, observerOptions);
 
-    sections.forEach(section => observer.observe(section));
+    pages.forEach(page => observer.observe(page));
 
     // Добавляем сердечки
     const heartsContainer = document.createElement("div");
