@@ -7,8 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
     document.body.style.opacity = "1";
 
     // Анимация появления блоков
-    const pages = document.querySelectorAll(".page");
-    const paragraphs = document.querySelectorAll(".text p");
+    const sections = document.querySelectorAll(".page");
 
     const observerOptions = {
         threshold: 0.1, // Активируем анимацию, когда 10% блока видно
@@ -24,8 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }, observerOptions);
 
-    pages.forEach(page => observer.observe(page));
-    paragraphs.forEach(p => observer.observe(p));
+    sections.forEach(section => observer.observe(section));
 
     // Добавляем сердечки
     const heartsContainer = document.createElement("div");
@@ -37,13 +35,42 @@ document.addEventListener("DOMContentLoaded", function() {
     heartsContainer.style.pointerEvents = "none"; // Чтобы сердечки не мешали кликам
     document.body.appendChild(heartsContainer);
 
-    for (let i = 0; i < 10; i++) {
+    const heartColors = ["#ff6b6b", "#ff8e8e", "#ffaaaa", "#ffcccc"]; // Разные цвета сердечек
+
+    for (let i = 0; i < 20; i++) { // Увеличим количество сердечек
         const heart = document.createElement("div");
         heart.classList.add("heart");
         heart.innerHTML = "❤️";
         heart.style.left = `${Math.random() * 100}%`;
         heart.style.top = `${Math.random() * 100}%`;
-        heart.style.animationDelay = `${Math.random() * 3}s`;
+        heart.style.animationDelay = `${Math.random() * 5}s`; // Разная задержка анимации
+        heart.style.fontSize = `${Math.random() * 20 + 16}px`; // Разный размер
+        heart.style.color = heartColors[Math.floor(Math.random() * heartColors.length)]; // Случайный цвет
         heartsContainer.appendChild(heart);
     }
+
+    // Анимация при клике на сердечки
+    document.addEventListener("click", function(event) {
+        if (event.target.classList.contains("heart")) {
+            event.target.style.opacity = "0";
+            setTimeout(() => event.target.remove(), 500); // Удаляем сердечко через 0.5 секунды
+        }
+    });
+
+    // Анимация текста (появление параграфов с задержкой)
+    const paragraphs = document.querySelectorAll(".text p");
+
+    paragraphs.forEach((paragraph, index) => {
+        paragraph.style.setProperty("--i", index + 1); // Устанавливаем задержку для каждого параграфа
+    });
+
+    const textObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+            }
+        });
+    }, observerOptions);
+
+    paragraphs.forEach(p => textObserver.observe(p));
 });
