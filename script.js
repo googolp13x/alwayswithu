@@ -1,4 +1,8 @@
+console.log("Скрипт загружен!");
+
 document.addEventListener("DOMContentLoaded", function() {
+    console.log("DOM загружен!");
+
     // Анимация загрузки страницы
     document.body.style.opacity = "1";
 
@@ -8,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
+            console.log(entry); // Проверка, что блоки появляются в области видимости
             if (entry.isIntersecting) {
                 entry.target.classList.add("visible");
             }
