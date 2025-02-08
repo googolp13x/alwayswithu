@@ -26,28 +26,6 @@ document.addEventListener("DOMContentLoaded", function() {
     pages.forEach(page => observer.observe(page));
 
     // Добавляем сердечки
-    const heartsContainer = document.createElement("div");
-    heartsContainer.style.position = "fixed";
-    heartsContainer.style.top = "0";
-    heartsContainer.style.left = "0";
-    heartsContainer.style.width = "100%";
-    heartsContainer.style.height = "100%";
-    heartsContainer.style.pointerEvents = "none"; // Чтобы сердечки не мешали кликам
-    document.body.appendChild(heartsContainer);
-
-    const heartColors = ["#ff6b6b", "#ff8e8e", "#ffaaaa", "#ffcccc"]; // Разные цвета сердечек
-
-    for (let i = 0; i < 20; i++) { // Увеличим количество сердечек
-        const heart = document.createElement("div");
-        heart.classList.add("heart");
-        heart.innerHTML = "❤️";
-        heart.style.left = `${Math.random() * 100}%`;
-        heart.style.top = `${Math.random() * 100}%`;
-        heart.style.animationDelay = `${Math.random() * 5}s`; // Разная задержка анимации
-        heart.style.fontSize = `${Math.random() * 20 + 16}px`; // Разный размер
-        heart.style.color = heartColors[Math.floor(Math.random() * heartColors.length)]; // Случайный цвет
-        heartsContainer.appendChild(heart);
-    }
 
     // Анимация при клике на сердечки
     document.addEventListener("click", function(event) {
