@@ -28,11 +28,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Добавляем сердечки
 
     // Анимация при клике на сердечки
-    document.addEventListener("click", function(event) {
-        if (event.target.classList.contains("heart")) {
-            event.target.style.opacity = "0";
-            setTimeout(() => event.target.remove(), 500); // Удаляем сердечко через 0.5 секунды
-        }
+   
     });
 
     // Анимация текста (появление параграфов с задержкой)
