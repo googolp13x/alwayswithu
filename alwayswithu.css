@@ -116,6 +116,53 @@ body {
     transform: rotate(360deg) scale(1.1);
 }
 
+/* Стили для блока с плейлистом */
+.playlist {
+    text-align: center; /* Выравниваем текст по центру */
+}
+
+.playlist h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.playlist p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.playlist .song-link {
+    display: inline-flex; /* Делаем кнопку компактной */
+    align-items: center;
+    text-decoration: none;
+    color: #1DB954;
+    font-size: 16px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    background-color: rgba(29, 185, 84, 0.1);
+    transition: all 0.3s ease;
+}
+
+.playlist .song-link:hover {
+    background-color: #1DB954;
+    color: #fff;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(29, 185, 84, 0.2);
+}
+
+.playlist .spotify-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    transition: transform 0.3s ease;
+}
+
+.playlist .song-link:hover .spotify-icon {
+    transform: rotate(360deg) scale(1.1);
+}
+
 /* Адаптивность для мобильных устройств */
 @media (max-width: 768px) {
     .page {
