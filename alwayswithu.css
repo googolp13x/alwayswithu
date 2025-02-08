@@ -166,6 +166,36 @@ body {
     transform: rotate(360deg) scale(1.1);
 }
 
+/* Стили для переключателя языка */
+.language-switcher {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000; /* Чтобы кнопки были поверх других элементов */
+}
+
+.lang-button {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.lang-button:hover {
+    background-color: #1DB954;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.lang-button.active {
+    background-color: #1DB954;
+    color: #fff;
+}
+
 /* Адаптивность для мобильных устройств */
 @media (max-width: 768px) {
     .page {
