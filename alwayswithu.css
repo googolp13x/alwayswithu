@@ -122,6 +122,9 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column; /* Добавляем вертикальное выравнивание */
+    width: 80%; /* Устанавливаем ширину блока */
+    max-width: 600px; /* Ограничиваем максимальную ширину */
+    margin: 0 auto; /* Центрируем блок по горизонтали */
 }
 
 .playlist h2 {
@@ -136,14 +139,15 @@ body {
     margin-bottom: 20px;
 }
 
+/* Стили для кнопки плейлиста */
 .playlist .song-link {
     display: inline-flex; /* Делаем кнопку компактной */
     align-items: center;
     text-decoration: none;
     color: #1DB954;
-    font-size: 16px;
-    padding: 8px 16px;
-    border-radius: 20px;
+    font-size: 18px; /* Увеличиваем размер текста */
+    padding: 12px 24px; /* Увеличиваем отступы */
+    border-radius: 25px; /* Увеличиваем скругление углов */
     background-color: rgba(29, 185, 84, 0.1);
     transition: all 0.3s ease;
 }
@@ -156,9 +160,9 @@ body {
 }
 
 .playlist .spotify-icon {
-    width: 16px;
-    height: 16px;
-    margin-right: 8px;
+    width: 20px; /* Увеличиваем размер иконки */
+    height: 20px;
+    margin-right: 10px; /* Увеличиваем отступ между иконкой и текстом */
     transition: transform 0.3s ease;
 }
 
