@@ -14,6 +14,12 @@ body {
 @keyframes fadeIn {
     to { opacity: 1; }
 }
+.header {
+            text-align: center; /* Центрируем текст */
+            margin-bottom: 20px; /* Отступ снизу */
+            font-size: 2em; /* Размер шрифта заголовка */
+            color: #333; /* Цвет текста */  
+ }
 
 /* Контейнер для всего альбома */
 .album {
@@ -201,12 +207,6 @@ body {
     background-color: #1DB954;
     color: #fff;
 }
-.header {
-            text-align: center; /* Центрируем текст */
-            margin-bottom: 20px; /* Отступ снизу */
-            font-size: 2em; /* Размер шрифта заголовка */
-            color: #333; /* Цвет текста */  
- }
 
 /* Адаптивность для мобильных устройств */
 @media (max-width: 768px) {
