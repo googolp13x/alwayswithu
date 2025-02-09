@@ -1,5 +1,6 @@
 /* Основные стили для страницы */
 body {
+    background: linear-gradient(to right, #ff7e5f, #feb47b); /* Градиент */
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
