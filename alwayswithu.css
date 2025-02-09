@@ -39,7 +39,6 @@ body {
     opacity: 0; /* Начальное состояние для анимации */
     transform: translateY(20px); /* Сдвигаем блок вниз */
     transition: opacity 0.5s ease, transform 0.5s ease;
-    font-family: 'Lato', sans-serif; /* Заголовки и параграфы */
 }
 
 /* Анимация появления блоков */
